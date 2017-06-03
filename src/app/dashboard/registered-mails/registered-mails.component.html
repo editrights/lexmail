@@ -1,0 +1,19 @@
+<main class="registered-mails mdl-list">
+    <header>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  add-mail">
+  			<i class="material-icons">add</i>
+		</button>
+    </header>
+
+    <ul class="mdl-list">
+        <li *ngFor="let mail of mails" class="mdl-list__item">
+            <a routerLink="/mails">
+                <span class="mdl-list__item-primary-content">
+                    <img class="mail-provider-icon" [src]="pickIcon(mail.type)" [alt]="mail.type" [title]="mail.type"/>
+                    <span>{{mail.displayName}}</span>
+                    <span class="mdl-badge mail-badge" [attr.data-badge]="mail.newMails"></span>
+                </span>
+            </a>
+        </li>
+    </ul>
+</main>

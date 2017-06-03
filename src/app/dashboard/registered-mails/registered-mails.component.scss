@@ -1,0 +1,47 @@
+:host {
+    header {
+        padding: 0 1.2rem;
+        position: relative;
+        display: flex;
+        margin: 0;
+        h1 {
+            padding: 0;
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .add-mail {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+        }
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        li {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            user-select: none;
+            &:active {
+                background: darken(#fff, 3%);
+            }
+            a {
+                color: rgba(0,0,0,.87);
+                text-decoration: none;
+                display: block;
+                width: 100%;
+                padding: .7rem .4rem;
+                font-size: 1.2rem;
+            }
+        }
+        .mail-provider-icon {
+           width: 1.5em;
+           margin-right: .5rem;
+           padding: 0 .5rem;
+        }
+        .open-mail {
+            float: right;
+        }
+    }
+}

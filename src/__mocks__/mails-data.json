@@ -1,0 +1,26 @@
+[
+    {
+        "internalName": "Test1",
+        "displayName": "Test1@gmail.com",
+        "type": "gmail",
+        "newMails": 33
+    },
+    {
+        "internalName": "Test2",
+        "displayName": "Test2@yahoo.com",
+        "type": "yahoo",
+        "newMails": 5
+    },
+    {
+        "internalName": "Test3",
+        "displayName": "Test3@outlook.com",
+        "type": "outlook",
+        "newMails": 17
+    },
+    {
+        "internalName": "Test4",
+        "displayName": "Test4@abv.bg",
+        "type": "unknown",
+        "newMails": 25
+    }
+]
