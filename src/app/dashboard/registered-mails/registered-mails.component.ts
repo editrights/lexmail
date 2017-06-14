@@ -3,9 +3,17 @@ import {Component, OnInit, Input} from '@angular/core';
 @Component({selector: 'app-registered-mails', templateUrl: './registered-mails.component.html', styleUrls: ['./registered-mails.component.scss']})
 export class RegisteredMailsComponent implements OnInit {
 
-  constructor() {}
+  constructor() {
+    this.columns = 1;
+    this.rowHeight = '40px';
+    this.tileBackground = "#c2c2d6";
+  }
 
-  @Input() mails : any[];
+  columns : number;
+  rowHeight : string;
+  tileBackground : string;
+
+  @Input()mails : any[];
 
   ngOnInit() {}
 

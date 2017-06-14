@@ -15,30 +15,44 @@
             bottom: 1rem;
         }
     }
+    .mails-list {
+        .mail-provider-icon {
+            width: 1.5em;
+            margin-right: .5rem;
+            padding: 0 .5rem;
+        }
+        .open-mail {
+            float: right;
+        }
+        .mail-link {
+            width: 100%;
+            height: 100%;
+        }
+        .mail-badge::after {
+            top: -4px;
+        }
+    }
     ul {
-        display: flex;
-        flex-direction: column;
-        margin-top: 0;
+        // display: flex;
+        // flex-direction: column;
+        // margin-top: 0;
         li {
-            display: flex;
-            border-bottom: 1px solid #ccc;
-            user-select: none;
-            &:active {
-                background: darken(#fff, 3%);
-            }
+            // display: flex;
+            // border-bottom: 1px solid #ccc;
+            // user-select: none;
             a {
-                color: rgba(0,0,0,.87);
-                text-decoration: none;
-                display: block;
-                width: 100%;
-                padding: .7rem .4rem;
-                font-size: 1.2rem;
+                // color: rgba(0,0,0,.87);
+                // text-decoration: none;
+                // display: block;
+                // width: 90%;
+                // padding: .7rem .4rem;
+                // font-size: 1.2rem;
             }
         }
         .mail-provider-icon {
-           width: 1.5em;
-           margin-right: .5rem;
-           padding: 0 .5rem;
+            width: 1.5em;
+            margin-right: .5rem;
+            padding: 0 .5rem;
         }
         .open-mail {
             float: right;

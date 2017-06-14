@@ -1,0 +1,30 @@
+:host {
+    /deep/ .mat-tab-label {
+        width: 50%;
+    }
+    .login-credentials {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        /deep/ .credentials-row {
+            display: flex;
+            justify-content: center;
+            .mat-input-container {
+                width: 100%;
+                input {
+                    width: 100%;
+                }
+            }
+        }
+        .button-row {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

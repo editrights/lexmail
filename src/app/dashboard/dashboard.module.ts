@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { DashboardEffects } from './state/effects';
 import { MailRegistryService } from '../api/mail-registry.service';
+import { MaterialComponentsModule } from '../material-components/material-components.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { MailRegistryService } from '../api/mail-registry.service';
     LayoutModule,
     RouterModule,
     BrowserAnimationsModule,
+    MaterialComponentsModule,
     EffectsModule.run(DashboardEffects)
   ],
   declarations: [DashboardComponent, RegisteredMailsComponent],
