@@ -1,0 +1,32 @@
+<article class="add-mail">
+
+  <app-header [title]="headerTitle" [backEnabled]="backEnabled"></app-header>
+
+  <form class="add-mail-form">
+    <div class="add-mail-row">
+      <md-input-container>
+        <input mdInput placeholder="Email" type="email">
+      </md-input-container>
+    </div>
+
+    <div class="add-mail-row">
+      <md-input-container>
+        <input mdInput placeholder="Password" type="password">
+      </md-input-container>
+    </div>
+
+    <div class="add-mail-row">
+      <md-select placeholder="Protocol" [(ngModel)]="selectedProtocol" name="protocol">
+        <md-option *ngFor="let protocol of protocols" [value]="protocol.value">
+          {{protocol.viewValue}}
+        </md-option>
+      </md-select>
+    </div>
+
+    <div class="button-row">
+      <button md-raised-button color="accent">Connect to email</button>
+    </div>
+
+  </form>
+
+</article>
