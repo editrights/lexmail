@@ -1,8 +1,13 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {verticalSlide} from '../../animations/routeChange';
-import {fabToggle} from '../../animations/fab_toggle';
+import { Component, OnInit, Input } from '@angular/core';
+import { verticalSlide } from '../../animations/routeChange';
+import { fabToggle } from '../../animations/fab_toggle';
 
-@Component({selector: 'app-registered-mails', templateUrl: './registered-mails.component.html', styleUrls: ['./registered-mails.component.scss'], animations: [fabToggle]})
+@Component({
+  selector: 'app-registered-mails',
+  templateUrl: './registered-mails.component.html',
+  styleUrls: ['./registered-mails.component.scss'],
+  animations: [fabToggle]
+})
 
 export class RegisteredMailsComponent implements OnInit {
 
@@ -12,31 +17,15 @@ export class RegisteredMailsComponent implements OnInit {
     this.tileBackground = "#ffffff";
   }
 
-  columns : number;
-  rowHeight : string;
-  tileBackground : string;
+  columns: number;
+  rowHeight: string;
+  tileBackground: string;
 
-  @Input()mails : any[];
+  @Input() mails: any[];
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  pickIcon(type) : string {
-    let result = '';
-
-    switch (type) {
-      case 'gmail':
-        result = '/assets/mail-providers/gmail.svg';
-        break;
-      case 'yahoo':
-        result = '/assets/mail-providers/yahoo.svg';
-        break;
-      case 'outlook':
-        result = '/assets/mail-providers/outlook.svg';
-        break;
-      default:
-        result = '/assets/mail-providers/default.svg';
-    }
-    return result;
+  pickBackAnimation(mail: string): string {
+      return '';
   }
-
 }

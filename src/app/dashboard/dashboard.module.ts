@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { DashboardEffects } from './state/effects';
 import { MailRegistryService } from '../api/mail-registry.service';
 import { MaterialComponentsModule } from '../material-components/material-components.module';
+import { MailProviderComponent } from './mail-provider/mail-provider.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { MaterialComponentsModule } from '../material-components/material-compon
     MaterialComponentsModule,
     EffectsModule.run(DashboardEffects)
   ],
-  declarations: [DashboardComponent, RegisteredMailsComponent],
+  declarations: [DashboardComponent, RegisteredMailsComponent, MailProviderComponent],
   exports: [DashboardComponent],
   providers: [MailRegistryService]
 })

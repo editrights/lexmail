@@ -7,14 +7,7 @@
 
     <md-grid-list [cols]="columns" [rowHeight]="rowHeight" class="mails-list">
         <md-grid-tile *ngFor="let mail of mails" [colspan]="1" [rowspan]="1" [style.background]="tileBackground">
-            <a [routerLink]="mail.routerLink" [queryParams]="{target: 'inbox'}" md-button class="mail-link">
-                <span class="mdl-list__item-primary-content">
-                    <img class="mail-provider-icon" [src]="pickIcon(mail.type)" [alt]="mail.type" [title]="mail.type"/>
-                    <span>{{mail.displayName}}</span>
-                <span class="mdl-badge mail-badge" [attr.data-badge]="mail.newMails"></span>
-                <md-icon class="arrow-right">chevron_right</md-icon>
-                </span>
-            </a>
+            <app-mail-provider [data]="mail" [transitionState]="'slideBack'"></app-mail-provider>
         </md-grid-tile>
     </md-grid-list>
 
