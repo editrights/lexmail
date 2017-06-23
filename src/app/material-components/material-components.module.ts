@@ -1,14 +1,27 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdToolbarModule, MdToolbarRow, MdGridListModule, MdTabsModule, MdInputModule} from '@angular/material';
+import {
+    MdButtonModule,
+    MdToolbarModule,
+    MdToolbarRow,
+    MdListModule,
+    MdGridListModule,
+    MdTabsModule,
+    MdInputModule,
+    MdIconModule,
+    MdSelectModule
+} from '@angular/material';
 
 @NgModule({
-  imports: [
-    CommonModule, BrowserAnimationsModule, MdButtonModule, MdToolbarModule, MdGridListModule, MdInputModule
-  ],
-  
-  declarations: [],
-  exports: [MdButtonModule, MdToolbarModule, MdToolbarRow, MdGridListModule, MdTabsModule, MdInputModule]
+    imports: [
+        CommonModule, BrowserAnimationsModule, MdButtonModule, MdToolbarModule, MdListModule,
+        MdGridListModule, MdInputModule, MdIconModule, MdSelectModule
+    ],
+    declarations: [],
+    exports: [MdButtonModule, MdToolbarModule,
+        MdToolbarRow, MdListModule, MdGridListModule, MdTabsModule, MdInputModule, MdIconModule, MdSelectModule]
 })
-export class MaterialComponentsModule {}
+
+export class MaterialComponentsModule {
+}

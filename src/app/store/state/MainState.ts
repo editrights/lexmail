@@ -1,11 +1,12 @@
 import {DashboardState, DashboardInitialState} from '../../dashboard/state/initialState';
+import {MailContent, MailItemsState} from '../../mail-instance/state/initialState';
 
 export interface State {
-    pageTitle: string;
-    dashboard: DashboardState
-};
+    dashboard: DashboardState;
+    opened_mail: MailContent;
+}
 
 export const initialState: State = {
-    pageTitle: 'Home',
-    dashboard: DashboardInitialState
+    dashboard: DashboardInitialState,
+    opened_mail: MailItemsState
 };

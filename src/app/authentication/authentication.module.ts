@@ -4,7 +4,6 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import {MaterialComponentsModule} from '../material-components/material-components.module';
 import {AuthActionsService} from './auth-actions.service';
 import { HttpModule } from '@angular/http';
-import { Angular2SocialLoginModule } from 'angular2-social-login';
 
 let providers = {
     "google": {
@@ -18,11 +17,10 @@ let providers = {
 
 @NgModule({
   imports: [
-    CommonModule, MaterialComponentsModule, HttpModule, Angular2SocialLoginModule
+    CommonModule, MaterialComponentsModule, HttpModule
   ],
   exports: [LoginPageComponent],
   declarations: [LoginPageComponent],
   providers: [AuthActionsService]
 })
 export class AuthenticationModule {}
-Angular2SocialLoginModule.loadProvidersScripts(providers);

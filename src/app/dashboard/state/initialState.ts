@@ -1,7 +1,7 @@
 export interface DashboardState {
-    items: Array<object>
-};
+    items: Array<object>;
+}
 
 export const DashboardInitialState: DashboardState = {
     items: []
-};
+}

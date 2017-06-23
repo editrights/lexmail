@@ -1,32 +1,18 @@
 <main class="registered-mails">
     <header>
-        <!--<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  add-mail">
+        <a class="add-mail" md-fab [routerLink]="['/add-mail']" [@fabToggle]>
   			<i class="material-icons">add</i>
-		</button>-->
-        <button class="add-mail" md-fab>
-  			<i class="material-icons">add</i>
-		</button>
+		</a>
     </header>
-
-    <!--<ul class="mdl-list1">
-        <li *ngFor="let mail of mails" class="mdl-list__item1">
-            <a routerLink="/mails" md-button>
-                <span class="mdl-list__item-primary-content">
-                    <img class="mail-provider-icon" [src]="pickIcon(mail.type)" [alt]="mail.type" [title]="mail.type"/>
-                    <span>{{mail.displayName}}</span>
-                    <span class="mdl-badge mail-badge" [attr.data-badge]="mail.newMails"></span>
-                </span>
-            </a>
-        </li>
-    </ul>-->
 
     <md-grid-list [cols]="columns" [rowHeight]="rowHeight" class="mails-list">
         <md-grid-tile *ngFor="let mail of mails" [colspan]="1" [rowspan]="1" [style.background]="tileBackground">
-            <a routerLink="/mails" md-button class="mail-link">
+            <a [routerLink]="mail.routerLink" [queryParams]="{target: 'inbox'}" md-button class="mail-link">
                 <span class="mdl-list__item-primary-content">
                     <img class="mail-provider-icon" [src]="pickIcon(mail.type)" [alt]="mail.type" [title]="mail.type"/>
                     <span>{{mail.displayName}}</span>
                 <span class="mdl-badge mail-badge" [attr.data-badge]="mail.newMails"></span>
+                <md-icon class="arrow-right">chevron_right</md-icon>
                 </span>
             </a>
         </md-grid-tile>

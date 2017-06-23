@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   constructor(private store : Store < State >) {}
   headerTitle : String = 'Dashboard';
   registeredMails : MailMetadata[] = [];
-
+  showHeaderControls: Boolean = true;
   ngOnInit() {
     this
       .store
@@ -31,6 +31,11 @@ export class DashboardComponent implements OnInit {
       .select('dashboard')
       .subscribe((data : DashboardState) => {
         this.registeredMails = <MailMetadata[]>data.items;
+        this.registeredMails = this.registeredMails.map(elem => {
+          return Object.assign(elem, {
+            routerLink: `/mails/${elem.internalName}`
+          });
+        })
       });
   }
 }

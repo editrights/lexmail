@@ -1,11 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthActionsService} from '../auth-actions.service';
-import {AuthService} from "angular2-social-login";
+
+import {DomSanitizer} from '@angular/platform-browser';
+import {MdIconRegistry} from '@angular/material';
 
 @Component({selector: 'app-login-page', templateUrl: './login-page.component.html', styleUrls: ['./login-page.component.scss']})
 export class LoginPageComponent implements OnInit {
 
-  constructor(private authService : AuthActionsService, public _auth : AuthService) {}
+  constructor(private authService : AuthActionsService, private iconRegistry : MdIconRegistry, sanitizer : DomSanitizer) {
+    iconRegistry.addSvgIcon('facebook-logo', sanitizer.bypassSecurityTrustResourceUrl('assets/custom-icons/facebook-logo.svg'));
+    iconRegistry.addSvgIcon('google-logo', sanitizer.bypassSecurityTrustResourceUrl('assets/custom-icons/google-logo.svg'));
+  }
 
   ngOnInit() {}
   sub : any;
@@ -17,13 +22,6 @@ export class LoginPageComponent implements OnInit {
   }
 
   otherLogin() {
-    this.sub = this
-      ._auth
-      .login('facebook')
-      .subscribe((data) => {
-        console.log(data);
-        // user data name, image, uid, provider, uid, email, token (returns tokenId for
-        // google, accessToken for Facebook, no token for linkedIn)
-      })
+  
   }
 }

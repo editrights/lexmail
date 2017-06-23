@@ -1,0 +1,7 @@
+:host {
+  overflow: auto;
+  /deep/ md-list {
+    height: 100vh;
+    overflow: auto;
+  }
+}

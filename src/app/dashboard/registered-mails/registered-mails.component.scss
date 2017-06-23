@@ -1,4 +1,5 @@
 :host {
+    padding-bottom: 2rem;
     header {
         padding: 0 1.2rem;
         position: relative;
@@ -13,49 +14,28 @@
             position: fixed;
             right: 1rem;
             bottom: 1rem;
+            z-index: 1;
         }
     }
-    .mails-list {
-        .mail-provider-icon {
-            width: 1.5em;
-            margin-right: .5rem;
-            padding: 0 .5rem;
-        }
-        .open-mail {
-            float: right;
-        }
-        .mail-link {
-            width: 100%;
-            height: 100%;
-        }
-        .mail-badge::after {
-            top: -4px;
-        }
-    }
-    ul {
-        // display: flex;
-        // flex-direction: column;
-        // margin-top: 0;
-        li {
-            // display: flex;
-            // border-bottom: 1px solid #ccc;
-            // user-select: none;
-            a {
-                // color: rgba(0,0,0,.87);
-                // text-decoration: none;
-                // display: block;
-                // width: 90%;
-                // padding: .7rem .4rem;
-                // font-size: 1.2rem;
+    /deep/ .mails-list {
+        margin-top: 1rem;
+        md-grid-tile {
+            .mail-provider-icon {
+                width: 1.5em;
+                margin-right: .5rem;
+                padding: 0 .5rem;
             }
-        }
-        .mail-provider-icon {
-            width: 1.5em;
-            margin-right: .5rem;
-            padding: 0 .5rem;
-        }
-        .open-mail {
-            float: right;
+            .open-mail {
+                float: right;
+            }
+            .mail-link {
+                width: 100%;
+                height: 100%;
+                text-align: left;
+            }
+            .mail-badge::after {
+                top: -4px;
+            }
         }
     }
 }

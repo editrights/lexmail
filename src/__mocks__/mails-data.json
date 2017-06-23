@@ -3,7 +3,7 @@
         "internalName": "Test1",
         "displayName": "Test1@gmail.com",
         "type": "gmail",
-        "newMails": 33
+        "newMails": 3
     },
     {
         "internalName": "Test2",
@@ -15,12 +15,12 @@
         "internalName": "Test3",
         "displayName": "Test3@outlook.com",
         "type": "outlook",
-        "newMails": 17
+        "newMails": 1
     },
     {
         "internalName": "Test4",
         "displayName": "Test4@abv.bg",
         "type": "unknown",
-        "newMails": 25
+        "newMails": 2
     }
 ]

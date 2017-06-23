@@ -2,5 +2,6 @@ export interface MailMetadata {
     internalName: string;
     displayName: string;
     type: string;
-    newMails: number
+    newMails: number;
+    routerLink: string
 }

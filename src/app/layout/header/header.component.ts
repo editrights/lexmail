@@ -10,6 +10,8 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   @Input() title: String;
+  @Input() backEnabled: Boolean;
+  @Input() showControls: Boolean;
 
   ngOnInit() {
   }

@@ -8,12 +8,17 @@ import {StoreModule} from '@ngrx/store';
 import {MainRouterModule} from '../core-router.module';
 import MainReducer from '../store/reducers/MainReducer';
 import dashboard from '../dashboard/state/reducer';
+import opened_mail from '../mail-instance/state/reducers';
+import {AddMailModule} from '../add-mail/add-mail.module';
+import { MailInstanceModule } from '../mail-instance/mail-instance.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, FormsModule, HttpModule, StoreModule.provideStore({MainReducer, dashboard}),
-    MainRouterModule
+    BrowserModule, FormsModule, HttpModule, StoreModule.provideStore({MainReducer, dashboard, opened_mail}),
+    AddMailModule,
+    MainRouterModule,
+    MailInstanceModule
   ],
   providers: []
 })

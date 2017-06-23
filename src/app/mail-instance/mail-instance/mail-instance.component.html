@@ -1,3 +1,28 @@
-<p [@routeChangeAnimation]>
-  mail-instance works!
-</p>
+<article class="mail-content">
+    <app-header [title]="headerTitle" [backEnabled]="backEnabled" [showControls]="showHeaderControls"></app-header>
+
+    <section class="main-section">
+        <app-mail-items-list [items]="items"></app-mail-items-list>
+        <div>
+            <a class="new-mail" md-fab [@fabToggle]>
+                <i class="material-icons">edit</i>
+            </a>
+        </div>
+    </section>
+
+    <nav md-tab-nav-bar class="nav-section">
+        <a md-tab-link [routerLink]="[]" [queryParams]="{target: 'inbox'}" [active]="routerLinkActive('inbox')">
+            Inbox
+        </a>
+        <a md-tab-link [routerLink]="[]" [queryParams]="{target: 'outbox'}" [active]="routerLinkActive('outbox')">
+            Outbox
+        </a>
+        <a md-tab-link [routerLink]="[]" [queryParams]="{target: 'sent'}" [active]="routerLinkActive('sent')">
+            Sent
+        </a>
+        <a md-tab-link [routerLink]="[]" [queryParams]="{target: 'draft'}" [active]="routerLinkActive('draft')">
+            Draft
+        </a>
+    </nav>
+
+</article>

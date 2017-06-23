@@ -1,12 +1,28 @@
 <main class="login-page">
   <md-tab-group>
 
-    <md-tab label="Login">
-      <section class="login-credentials">
+    <md-tab label="Sign in">
+      <section class="login-credentials credentials">
+
+        <div class="social-buttons">
+          <button md-raised-button class="facebook-btn">
+            <md-icon svgIcon="facebook-logo" class="facebook-logo"></md-icon>
+            Sign in with Facebook
+          </button>
+
+          <button md-raised-button class="google-btn">
+            <md-icon svgIcon="google-logo" class="google-logo"></md-icon>
+            Sign in with Googe
+          </button>
+        </div>
+
+        <div class="separator">
+          OR
+        </div>
 
         <div class="credentials-row">
           <md-input-container>
-            <input mdInput placeholder="Username">
+            <input mdInput placeholder="Email" type="email">
           </md-input-container>
         </div>
 
@@ -17,13 +33,48 @@
         </div>
 
         <div class="button-row">
-          <button (click)="login()" md-raised-button color="primary">Log In</button>
+          <button (click)="login()" md-raised-button color="primary">Sign in with email</button>
         </div>
 
       </section>
     </md-tab>
 
-    <md-tab label="Sign Up">
+    <md-tab label="Sign up">
+      <section class="signup-credentials credentials">
+
+        <div class="social-buttons">
+          <button md-raised-button class="facebook-btn">
+            <md-icon svgIcon="facebook-logo" class="facebook-logo"></md-icon>
+            Sign up with Facebook
+          </button>
+
+          <button md-raised-button class="google-btn">
+            <md-icon svgIcon="google-logo" class="google-logo"></md-icon>
+            Sign up with Googe
+          </button>
+        </div>
+
+        <div class="separator">
+          OR
+        </div>
+
+        <div class="credentials-row">
+          <md-input-container>
+            <input mdInput placeholder="Email" type="email">
+          </md-input-container>
+        </div>
+
+        <div class="credentials-row">
+          <md-input-container>
+            <input mdInput placeholder="Password" type="password">
+          </md-input-container>
+        </div>
+
+        <div class="button-row">
+          <button (click)="login()" md-raised-button color="primary">Sign up with email</button>
+        </div>
+
+      </section>
     </md-tab>
 
   </md-tab-group>

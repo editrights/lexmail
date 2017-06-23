@@ -1,7 +1,8 @@
 import {Action} from '@ngrx/store';
 import * as actionTypes from './actionTypes';
+import {DashboardInitialState, DashboardState} from './initialState';
 
-const dashboard = (state : any = {}, action : Action) => {
+const dashboard = (state : DashboardState = DashboardInitialState, action : Action) => {
 
     switch (action.type) {
         case actionTypes.GET_REGISTERED_MAILS_SUCCESS:

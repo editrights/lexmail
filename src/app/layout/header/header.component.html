@@ -1,22 +1,11 @@
-<!--<header class="mdl-layout__header default-primary-color">
-	<div class="mdl-layout__header-row">
-		<h1 class="mdl-layout-title">{{title}}</h1>
-		<div class="dashboard-header-controls">
-			<button class="mdl-button mdl-js-button mdl-button--icon">
-				<i class="material-icons">search</i>
-			</button>
-			<button class="mdl-button mdl-js-button mdl-button--icon">
-				<i class="material-icons">settings</i>
-			</button>
-
-		</div>
-	</div>
-</header>-->
-
 <header>
-	<md-toolbar color="primary" class="header-row-1">
+	<md-toolbar color="primary" class="header-row-1 header-wrapper">
+			<a md-button [routerLink]="['/mails']" *ngIf="backEnabled" class="back-button">
+				<md-icon >arrow_back</md-icon>
+			</a>
+		    
 			<h1 class="header-title">{{title}}</h1>
-			<div class="dashboard-header-controls">
+			<div class="header-controls" *ngIf="showControls">
 				<button class="mdl-button mdl-js-button mdl-button--icon">
 					<i class="material-icons">search</i>
 				</button>

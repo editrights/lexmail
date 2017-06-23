@@ -2,7 +2,7 @@
     /deep/ .mat-tab-label {
         width: 50%;
     }
-    .login-credentials {
+    .credentials {
         width: 80%;
         margin: 0 auto;
         display: flex;
@@ -26,5 +26,33 @@
                 width: 100%;
             }
         }
+    }
+    /deep/ .social-buttons {
+        button {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: white;
+            md-icon {
+                path {
+                    fill: white;
+                }
+                svg {
+                    vertical-align: initial;
+                }
+            }
+        }
+        .facebook-btn {
+            background: #428bca;
+            border-color: #357ebd;
+            .facebook-logo {}
+        }
+        .google-btn {
+            background: #d2322d;
+            border-color: #ac2925;
+            .google-logo {}
+        }
+    }
+    .separator {
+        text-align: center;
     }
 }

@@ -1,0 +1,130 @@
+[
+  {
+    "internalName": "Test1",
+    "displayName": "Test1@gmail.com",
+    "type": "gmail",
+    "inbox": [
+      {
+        "sender": "inbox test1",
+        "content": "Lorem ipsum"
+      },
+      {
+        "sender": "inbox test2",
+        "content": "Lorem ipsum"
+      },
+      {
+        "sender": "inbox test3",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "outbox": [
+      {
+        "sender": "outbox test1",
+        "content": "Lorem ipsum"
+      },
+      {
+        "sender": "outbox test2",
+        "content": "Lorem ipsum"
+      },
+      {
+        "sender": "outbox test3",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "sent": [
+      {
+        "sender": "sent test1",
+        "content": "Lorem ipsum"
+      },
+      {
+        "sender": "sent test2",
+        "content": "Lorem ipsum"
+      },
+      {
+        "sender": "sent test3",
+        "content": "Lorem ipsum"
+      },
+      {
+        "sender": "sent test4",
+        "content": "Lorem ipsum"
+      },
+      {
+        "sender": "sent test5",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "newMails": 3
+  },
+  {
+    "internalName": "Test2",
+    "displayName": "Test2@yahoo.com",
+    "type": "yahoo",
+    "newMails": 5,
+    "inbox": [
+      {
+        "sender": "inbox test2",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "outbox": [
+      {
+        "sender": "outbox test2",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "sent": [
+      {
+        "sender": "sent test2",
+        "content": "Lorem ipsum"
+      }
+    ]
+  },
+  {
+    "internalName": "Test3",
+    "displayName": "Test3@outlook.com",
+    "type": "outlook",
+    "newMails": 1,
+    "inbox": [
+      {
+        "sender": "inbox test3",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "outbox": [
+      {
+        "sender": "outbox test3",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "sent": [
+      {
+        "sender": "sent test3",
+        "content": "Lorem ipsum"
+      }
+    ]
+  },
+  {
+    "internalName": "Test4",
+    "displayName": "Test4@abv.bg",
+    "type": "unknown",
+    "newMails": 2,
+    "inbox": [
+      {
+        "sender": "inbox test4",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "outbox": [
+      {
+        "sender": "outbox test4",
+        "content": "Lorem ipsum"
+      }
+    ],
+    "sent": [
+      {
+        "sender": "sent test4",
+        "content": "Lorem ipsum"
+      }
+    ]
+  }
+]

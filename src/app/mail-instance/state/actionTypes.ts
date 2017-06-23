@@ -1,0 +1,5 @@
+export const GET_MAIL_CONTENT: string = 'GET_MAIL_CONTENT';
+
+export const GET_MAIL_CONTENT_SUCCESS: string = 'GET_MAIL_CONTENT_SUCCESS';
+
+export const GET_MAIL_CONTENT_ERROR: string = 'GET_MAIL_CONTENT_ERROR';
