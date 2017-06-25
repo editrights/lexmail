@@ -16,7 +16,7 @@ export class MailInstanceEffects {
                 .getMailContents()
                 .map(res => ({
                     type: actionTypes.GET_MAIL_CONTENT_SUCCESS,
-                    payload: this.formatData(res.json(), action.payload.mailBox, action.payload.target)
+                    payload: this.formatData(res, action.payload.mailBox, action.payload.target)
                 }))
                 .catch(() => Observable.of({type: actionTypes.GET_MAIL_CONTENT_ERROR}));
         });

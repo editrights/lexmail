@@ -1,22 +1,38 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Component, Input, Output, HostBinding, EventEmitter } from '@angular/core';
 import { MailMetadata } from '../../api/models/MailMetadata';
-import { diagonalSlide } from '../animations';
+import { diagonalSlide, expandingLogo } from '../animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mail-provider',
   templateUrl: './mail-provider.component.html',
   styleUrls: ['./mail-provider.component.scss'],
   animations: [
-    diagonalSlide('*')
+    diagonalSlide('*'),
+    expandingLogo()
   ]
 })
-export class MailProviderComponent implements OnInit {
+export class MailProviderComponent {
   @Input() data: MailMetadata;
-  private topCoord: string = '*';
   @HostBinding('@diagonalSlide') @Input() transitionState: string;
-  constructor() { }
+  mailLogoState: string = 'normal';
+  logoExpansions: number = 0;
+  constructor(private router: Router) { }
 
-  ngOnInit() { }
+  onMailClick() {
+    this.mailLogoState = 'expand';
+  }
+  navigateToMailContents() {
+    if (this.logoExpansions > 0) {
+      this.router.navigate([this.data.routerLink], {
+        queryParams: {
+          target: 'inbox'
+        }
+      });
+    } else {
+      this.logoExpansions += 1;
+    }
+  }
   pickIcon(type): string {
     let result = '';
 

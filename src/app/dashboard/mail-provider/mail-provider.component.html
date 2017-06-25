@@ -1,6 +1,15 @@
-<a [routerLink]="data.routerLink" [queryParams]="{target: 'inbox'}" md-button class="mail-link">
+<!--<a [routerLink]="data.routerLink" [queryParams]="{target: 'inbox'}" md-button class="mail-link">
   <span class="mdl-list__item-primary-content">
     <img class="mail-provider-icon" [src]="pickIcon(data.type)" [alt]="data.type" [title]="data.type"/>
+    <span>{{data.displayName}}</span>
+    <span class="mdl-badge mail-badge" [attr.data-badge]="data.newMails"></span>
+    <md-icon class="arrow-right">chevron_right</md-icon>
+  </span>
+</a>-->
+
+<a md-button class="mail-link" (click)="onMailClick()">
+  <span class="mdl-list__item-primary-content">
+    <img class="mail-provider-icon" [src]="pickIcon(data.type)" [alt]="data.type" [title]="data.type" [@logoExpand]="mailLogoState" (@logoExpand.done)="navigateToMailContents()"/>
     <span>{{data.displayName}}</span>
     <span class="mdl-badge mail-badge" [attr.data-badge]="data.newMails"></span>
     <md-icon class="arrow-right">chevron_right</md-icon>

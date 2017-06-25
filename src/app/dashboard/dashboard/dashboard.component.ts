@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   headerTitle: String = 'Dashboard';
   registeredMails: MailMetadata[] = [];
   showHeaderControls: Boolean = true;
-  @HostBinding('@routeChangeAnimation') routeChangeAnimation;
+  // @HostBinding('@routeChangeAnimation') routeChangeAnimation;
   previousUrl: string;
   routerSubscription: any;
 

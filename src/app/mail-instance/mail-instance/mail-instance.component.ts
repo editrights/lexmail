@@ -23,7 +23,7 @@ export class MailInstanceComponent implements OnInit {
     backEnabled: Boolean = true;
     showHeaderControls: Boolean = true;
     items: Array<MailContentItem> = [];
-    @HostBinding('@routeChangeAnimation') routeChangeAnimation;
+    // @HostBinding('@routeChangeAnimation') routeChangeAnimation;
 
     static filterVisibleItems(mailContent: MailContent, filter: string): Array<MailContentItem> {
         return mailContent[filter] || [];
