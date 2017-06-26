@@ -11,18 +11,11 @@
 
     </header>
 
-    <!--<md-grid-list [cols]="columns" [rowHeight]="rowHeight" class="mails-list">
-        <md-grid-tile *ngFor="let mail of mails" [colspan]="1" [rowspan]="1" [style.background]="tileBackground">
-            <app-mail-provider [data]="mail" [transitionState]="'slideBack'"></app-mail-provider>
-        </md-grid-tile>
-    </md-grid-list>-->
-
     <md-list class="mails-list">
         <md-list-item *ngFor="let mail of mails">
-            <app-mail-provider [data]="mail" [transitionState]="'slideBack'"></app-mail-provider>
+            <app-mail-provider [data]="mail" [backInLineAnimate]="shouldAnimateBack(mail)"></app-mail-provider>
         </md-list-item>
     </md-list>
-
 
     <div [@expand]="fabState" (@expand.done)="navigateTo('/add-mail')"></div>
 </main>

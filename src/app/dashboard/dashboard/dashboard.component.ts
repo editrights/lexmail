@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostBinding, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { routeChangeAnimation } from '../../animations/routeChange';
 import { getRegisteredMails } from '../state/actions';
 import { Store } from '@ngrx/store';
@@ -12,6 +12,7 @@ import { Observable } from 'rxjs/Observable';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [routeChangeAnimation],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
