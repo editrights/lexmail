@@ -1,6 +1,6 @@
 <header>
 	<md-toolbar color="primary" class="header-row-1 header-wrapper">
-			<a md-button [routerLink]="['/mails']" *ngIf="backEnabled" class="back-button">
+			<a md-button [routerLink]="backURL" [queryParams]="backQuery" *ngIf="backEnabled" class="back-button">
 				<md-icon >arrow_back</md-icon>
 			</a>
 		    

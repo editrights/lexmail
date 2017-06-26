@@ -1,7 +1,9 @@
-<md-list *ngIf="items.length > 0">
-    <md-list-item *ngFor="let item of items" [@fadeIn]>
-        <h4 md-line>{{item.sender}}</h4>
-        <p md-line> {{item.content}} </p>
+<md-list *ngIf="items.length > 0" [@listAnimation]="receivedItems" (@listAnimation.done)="onListAnimationDone()">
+    <md-list-item *ngFor="let item of items">
+        <div class="animated-list-item">
+            <h4 md-line>{{item.sender}}</h4>
+            <p md-line> {{item.content}} </p>
+        </div>
     </md-list-item>
 </md-list>
 

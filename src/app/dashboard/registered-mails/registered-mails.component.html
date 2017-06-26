@@ -12,7 +12,7 @@
     </header>
 
     <md-list class="mails-list">
-        <md-list-item *ngFor="let mail of mails">
+        <md-list-item *ngFor="let mail of mails" class="md-list-item">
             <app-mail-provider [data]="mail" [backInLineAnimate]="shouldAnimateBack(mail)"></app-mail-provider>
         </md-list-item>
     </md-list>

@@ -1,6 +1,6 @@
 import {Component, Input, Output, HostBinding, EventEmitter, ChangeDetectionStrategy, OnInit} from '@angular/core';
 import {MailMetadata} from '../../api/models/MailMetadata';
-import {diagonalSlide, expandingLogo, backInLine} from '../animations';
+import {expandingLogo, backInLine} from '../animations';
 import {Router} from '@angular/router';
 
 @Component({
@@ -9,7 +9,6 @@ import {Router} from '@angular/router';
     styleUrls: ['./mail-provider.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
-        diagonalSlide('*'),
         expandingLogo(),
         backInLine()
     ]
@@ -44,19 +43,18 @@ export class MailProviderComponent implements OnInit {
 
     pickIcon(type): string {
         let result = '';
-
         switch (type) {
             case 'gmail':
-                result = '../../assets/mail-providers/gmail.svg';
+                result = 'assets/mail-providers/gmail.svg';
                 break;
             case 'yahoo':
-                result = '../../assets/mail-providers/yahoo.svg';
+                result = 'assets/mail-providers/yahoo.svg';
                 break;
             case 'outlook':
-                result = '../../assets/mail-providers/outlook.svg';
+                result = 'assets/mail-providers/outlook.svg';
                 break;
             default:
-                result = '../../assets/mail-providers/default.svg';
+                result = 'assets/mail-providers/default.svg';
         }
         return result;
     }

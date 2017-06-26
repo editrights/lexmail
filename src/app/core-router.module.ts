@@ -9,7 +9,7 @@ import {MailInstanceModule} from './mail-instance/mail-instance.module';
 import {LoginPageComponent} from './authentication/login-page/login-page.component';
 import {PageNotFoundComponent} from './layout/page-not-found/page-not-found.component';
 
-const appRoutes : Routes = [
+const appRoutes: Routes = [
   {
     path: 'mails',
     component: DashboardComponent,
@@ -25,7 +25,7 @@ const appRoutes : Routes = [
     path: '**',
     component: PageNotFoundComponent
   }
-]
+];
 
 @NgModule({
   imports: [

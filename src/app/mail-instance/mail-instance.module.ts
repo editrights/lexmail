@@ -12,7 +12,8 @@ import {MailInstanceEffects} from './state/effects';
 
 @NgModule({
     imports: [
-        CommonModule, RouterModule.forChild(routes),
+        CommonModule,
+        RouterModule.forChild(routes),
         BrowserAnimationsModule,
         LayoutModule,
         MaterialComponentsModule,

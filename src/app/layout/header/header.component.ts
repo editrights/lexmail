@@ -6,12 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
   @Input() title: String;
   @Input() backEnabled: Boolean;
+  @Input() backURL: string;
+  @Input() backQuery: any = {};
   @Input() showControls: Boolean;
+  constructor() { }
 
   ngOnInit() {
   }

@@ -1,12 +1,12 @@
 import {Component, Input, OnDestroy, ChangeDetectionStrategy} from '@angular/core';
 import {fabToggle} from '../../animations/fab_toggle';
-import {expandingFAB} from '../animations';
+import {expandingFAB} from '../../animations/animations';
 import {Router} from '@angular/router';
 import {go, RouterState} from '@ngrx/router-store';
 import {Store} from '@ngrx/store';
 import {State} from '../../store/state/MainState';
 import {Subscription} from 'rxjs/Subscription';
-import { MailMetadata } from '../../api/models/MailMetadata';
+import {MailMetadata} from '../../api/models/MailMetadata';
 
 @Component({
     selector: 'app-registered-mails',
@@ -21,6 +21,7 @@ export class RegisteredMailsComponent implements OnDestroy {
     rowHeight: string;
     tileBackground: string;
     fabState: string = 'normal';
+    itemsReady: string = 'pending';
     fabExpansions: number = 0;
     previousURL: string;
     storeSub: Subscription;
@@ -53,6 +54,7 @@ export class RegisteredMailsComponent implements OnDestroy {
             this.fabExpansions += 1;
         }
     }
+
     shouldAnimateBack(data: MailMetadata): string {
         if (this.previousURL.includes(data.routerLink)) {
             return 'backInLine';

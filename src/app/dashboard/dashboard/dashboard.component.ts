@@ -1,5 +1,4 @@
 import { Component, OnInit, HostBinding, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
-import { routeChangeAnimation } from '../../animations/routeChange';
 import { getRegisteredMails } from '../state/actions';
 import { Store } from '@ngrx/store';
 import { State } from '../../store/state/MainState';
@@ -13,13 +12,12 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [routeChangeAnimation],
+  animations: [],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   headerTitle: String = 'Dashboard';
   registeredMails: MailMetadata[] = [];
   showHeaderControls: Boolean = true;
-  // @HostBinding('@routeChangeAnimation') routeChangeAnimation;
   previousUrl: string;
   routerSubscription: any;
 
