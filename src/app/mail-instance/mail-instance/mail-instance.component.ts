@@ -1,4 +1,4 @@
-import {Component, OnInit, HostBinding} from '@angular/core';
+import {Component, OnInit, OnDestroy, HostBinding} from '@angular/core';
 import {listAnimation, expandingFAB} from '../../animations/animations';
 import {fabToggle} from '../../animations/fab_toggle';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -7,7 +7,8 @@ import {State} from '../../store/state/MainState';
 import {MailContent, MailContentItem} from '../state/initialState';
 import {getMailContent} from '../state/actions';
 import {NavigationExtras} from '@angular/router';
-import {go} from '@ngrx/router-store';
+import {go, replace} from '@ngrx/router-store';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
     selector: 'app-mail-instance',
@@ -18,7 +19,7 @@ import {go} from '@ngrx/router-store';
     ]
 })
 
-export class MailInstanceComponent implements OnInit {
+export class MailInstanceComponent implements OnInit, OnDestroy {
     headerTitle: string;
     activeLink: string;
     content: MailContent = <MailContent>{};
@@ -26,9 +27,9 @@ export class MailInstanceComponent implements OnInit {
     fabState: string = 'normal';
     backEnabled: Boolean = true;
     backURL: string = '/mails';
-    backQuery: any;
     showHeaderControls: Boolean = true;
     items: Array<MailContentItem> = [];
+    storeSub: Subscription;
 
     static filterVisibleItems(mailContent: MailContent, filter: string): Array<MailContentItem> {
         return mailContent[filter] || [];
@@ -41,18 +42,12 @@ export class MailInstanceComponent implements OnInit {
             .params
             .subscribe(params => {
                 this.headerTitle = params['name'];
-            });
-
-        this
-            .route
-            .queryParams
-            .subscribe(params => {
-                this.activeLink = params['target'];
-                this.items = MailInstanceComponent.filterVisibleItems(this.content, params['target']);
+                this.activeLink = params['box'];
+                this.items = MailInstanceComponent.filterVisibleItems(this.content, params['box']);
                 this
                     .store
                     .dispatch(getMailContent({
-                        target: params['target'],
+                        target: params['box'],
                         mailBox: this.headerTitle
                     }));
             });
@@ -64,11 +59,23 @@ export class MailInstanceComponent implements OnInit {
 
     navigateToComposer(target: string): void {
         if (this.fabExpansions > 0) {
-            const currentRoute = this.router.url.slice(0, this.router.url.indexOf('?'));
-            this.store.dispatch(go([currentRoute + '/new']));
+            const currentRoute = this.router.url.slice(0, this.router.url.lastIndexOf('/'));
+            this.store.dispatch(go([currentRoute + '/draft/new']));
         } else {
             this.fabExpansions += 1;
         }
+    }
+
+    composeInnerLink(box: string): string {
+        const base = this.router.url.slice(0, this.router.url.lastIndexOf('/'));
+        const result = `${base}/${box}`;
+
+        return result;
+    }
+
+    navigateTo(box: string): void {
+        const url = this.composeInnerLink(box);
+        this.store.dispatch(replace([url]));
     }
 
     routerLinkActive(link): Boolean {
@@ -78,7 +85,7 @@ export class MailInstanceComponent implements OnInit {
     }
 
     ngOnInit() {
-        this
+        this.storeSub = this
             .store
             .select('opened_mail')
             .subscribe((data: MailContent) => {
@@ -87,4 +94,7 @@ export class MailInstanceComponent implements OnInit {
             });
     }
 
+    ngOnDestroy() {
+        this.storeSub.unsubscribe();
+    }
 }

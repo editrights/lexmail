@@ -1,7 +1,8 @@
 <article class="mail-content">
-    <app-header [title]="headerTitle" [backEnabled]="backEnabled" [showControls]="showHeaderControls" [backURL]="backURL"></app-header>
+    <app-header [title]="headerTitle" [backEnabled]="backEnabled" [showControls]="showHeaderControls"
+                [backURL]="backURL"></app-header>
 
-    <section class="main-section">
+    <section class="main-section app-main-content">
         <app-mail-items-list [items]="items"></app-mail-items-list>
         <div>
             <a class="new-mail" md-fab [@fabToggle] (click)="expandFAB()">
@@ -11,16 +12,16 @@
     </section>
 
     <nav md-tab-nav-bar class="nav-section">
-        <a md-tab-link [routerLink]="[]" [queryParams]="{target: 'inbox'}" [active]="routerLinkActive('inbox')">
+        <a md-tab-link (click)="navigateTo('inbox')" [active]="routerLinkActive('inbox')">
             Inbox
         </a>
-        <a md-tab-link [routerLink]="[]" [queryParams]="{target: 'outbox'}" [active]="routerLinkActive('outbox')">
+        <a md-tab-link (click)="navigateTo('outbox')" [active]="routerLinkActive('outbox')">
             Outbox
         </a>
-        <a md-tab-link [routerLink]="[]" [queryParams]="{target: 'sent'}" [active]="routerLinkActive('sent')">
+        <a md-tab-link (click)="navigateTo('sent')" [active]="routerLinkActive('sent')">
             Sent
         </a>
-        <a md-tab-link [routerLink]="[]" [queryParams]="{target: 'draft'}" [active]="routerLinkActive('draft')">
+        <a md-tab-link (click)="navigateTo('draft')" [active]="routerLinkActive('draft')">
             Draft
         </a>
     </nav>

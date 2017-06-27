@@ -9,6 +9,7 @@ import {routes} from './routing';
 import {MailItemsListComponent} from './mail-items-list/mail-items-list.component';
 import {EffectsModule} from '@ngrx/effects';
 import {MailInstanceEffects} from './state/effects';
+import { MailContentComponent } from './mail-content/mail-content.component';
 
 @NgModule({
     imports: [
@@ -20,7 +21,7 @@ import {MailInstanceEffects} from './state/effects';
         EffectsModule.run(MailInstanceEffects)
     ],
     exports: [RouterModule],
-    declarations: [MailInstanceComponent, MailItemsListComponent]
+    declarations: [MailInstanceComponent, MailItemsListComponent, MailContentComponent]
 })
 export class MailInstanceModule {
 }
