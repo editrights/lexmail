@@ -19,7 +19,7 @@ export const routes: Routes = [
             MailExistsGuardService
         ]
     }, {
-        path: 'mails/:name/:box/:mail',
+        path: 'mails/:name/:box/:mailId',
         component: MailContentComponent,
         pathMatch: 'full',
         canActivate: [
