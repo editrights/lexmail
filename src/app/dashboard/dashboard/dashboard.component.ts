@@ -41,9 +41,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.registeredMails = <MailMetadata[]>data.items;
         this.registeredMails = this.registeredMails.map(elem => {
           return Object.assign(elem, {
-            routerLink: `/mails/${elem.internalName}`
+            routerLink: `/mails/${elem.internalName}/inbox`
           });
-        })
+        });
       });
   }
   ngOnDestroy() {

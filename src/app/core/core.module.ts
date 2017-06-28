@@ -14,6 +14,8 @@ import opened_mail from '../mail-instance/state/reducers';
 import {AddMailModule} from '../add-mail/add-mail.module';
 import {MailInstanceModule} from '../mail-instance/mail-instance.module';
 import {MailComposerModule} from '../mail-composer/mail-composer.module';
+import {MailExistsGuardService} from './mail-exists-guard.service';
+import {SearchModule} from '../search/search.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -28,9 +30,10 @@ import {MailComposerModule} from '../mail-composer/mail-composer.module';
         AddMailModule,
         MailComposerModule,
         MailInstanceModule,
+        SearchModule,
         MainRouterModule,
     ],
-    providers: []
+    providers: [MailExistsGuardService]
 })
 export class CoreModule {
 }

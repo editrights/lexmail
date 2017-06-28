@@ -1,12 +1,13 @@
 import {Component, OnInit, HostBinding} from '@angular/core';
 import {routeChangeAnimation} from '../../animations/routeChange';
 import {fadeIn, buttonShrink} from '../animations';
+import {slideToHeader} from '../../animations/animations';
 
 @Component({
     selector: 'app-add-mail-page',
     templateUrl: './add-mail-page.component.html',
     styleUrls: ['./add-mail-page.component.scss'],
-    animations: [routeChangeAnimation, fadeIn(), buttonShrink()]
+    animations: [routeChangeAnimation, fadeIn(), buttonShrink(), slideToHeader()]
 })
 export class AddMailPageComponent implements OnInit {
 

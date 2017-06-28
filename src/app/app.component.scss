@@ -1,3 +1,6 @@
 :host {
     height: 100%;
+    /deep/ .app-main-content {
+        margin-top: 60px;
+    }
 }

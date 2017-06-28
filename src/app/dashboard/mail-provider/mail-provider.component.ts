@@ -31,11 +31,7 @@ export class MailProviderComponent implements OnInit {
 
     navigateToMailContents() {
         if (this.logoExpansions > 0) {
-            this.router.navigate([this.data.routerLink], {
-                queryParams: {
-                    target: 'inbox'
-                }
-            });
+            this.router.navigate([this.data.routerLink]);
         } else {
             this.logoExpansions += 1;
         }

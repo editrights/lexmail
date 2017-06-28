@@ -21,7 +21,6 @@ export class RegisteredMailsComponent implements OnDestroy {
     rowHeight: string;
     tileBackground: string;
     fabState: string = 'normal';
-    itemsReady: string = 'pending';
     fabExpansions: number = 0;
     previousURL: string;
     storeSub: Subscription;
@@ -49,14 +48,13 @@ export class RegisteredMailsComponent implements OnDestroy {
     navigateTo(target: string): void {
         if (this.fabExpansions > 0) {
             this.store.dispatch(go([target]));
-            // this.router.navigate([target]);
         } else {
             this.fabExpansions += 1;
         }
     }
 
     shouldAnimateBack(data: MailMetadata): string {
-        if (this.previousURL.includes(data.routerLink)) {
+        if (this.previousURL.includes(data.routerLink.slice(0, data.routerLink.lastIndexOf('/')))) {
             return 'backInLine';
         } else {
             return 'normal';

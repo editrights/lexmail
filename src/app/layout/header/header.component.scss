@@ -1,13 +1,18 @@
-header {
+:host {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  header {
     display: block;
     position: relative;
     margin-bottom: 1rem;
     .header-title {
-        flex-grow: 1;
-        font-size: 1em;
+      flex-grow: 1;
+      font-size: 1em;
     }
     .back-button {
-        text-align: left;
-        padding: 0;
+      text-align: left;
+      padding: 0;
     }
+  }
 }

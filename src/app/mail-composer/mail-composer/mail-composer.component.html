@@ -1,3 +1,37 @@
 <article>
-  <app-header [title]="headerTitle" [backEnabled]="backEnabled" [backURL]="backURL" [backQuery]="backQuery"></app-header>
+    <app-header [title]="headerTitle" [backEnabled]="backEnabled" [backURL]="backURL"></app-header>
+
+    <button md-raised-button color="accent" class="send-btn" [@slideToHeader]>
+        <md-icon>send</md-icon>
+        <span>Send it</span>
+    </button>
+
+    <div class="app-main-content">
+        <form class="send-mail-form">
+            <div class="send-mail-row">
+                <md-input-container>
+                    <input mdInput placeholder="From" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="send-mail-row">
+                <md-input-container>
+                    <input mdInput placeholder="To" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="send-mail-row">
+                <md-input-container>
+                    <input mdInput placeholder="Subject" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="send-mail-row">
+                <md-input-container>
+                    <textarea appResizable mdInput placeholder="Content"></textarea>
+                </md-input-container>
+            </div>
+
+        </form>
+    </div>
 </article>

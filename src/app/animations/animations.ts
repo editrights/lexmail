@@ -39,3 +39,16 @@ export const expandingFAB = () => {
         ])
     ]);
 };
+
+export const slideToHeader = () => {
+    return trigger('slideToHeader', [
+        transition(':enter', [
+            style({
+                top: '-100%'
+            }),
+            animate('.3s linear', style({
+               top: '10px'
+            }))
+        ])
+    ]);
+};

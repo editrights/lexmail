@@ -1,31 +1,27 @@
 :host {
-    .add-mail-form {
-        width: 80%;
-        margin: 0 auto;
-    }
-    /deep/ .add-mail-row {
-        display: flex;
-        justify-content: center;
-        md-input-container {
-            width: 100%;
-            input {
-                width: 100%;
-            }
-        }
-        md-select {
-            width: 100%;
-            select {
-                width: 100%;
-            }
-        }
-    }
-    .button-row {
+  .add-mail-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+  /deep/ .add-mail-row {
+    display: flex;
+    justify-content: center;
+    md-input-container {
+      width: 100%;
+      input {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-        button {
-            width: 100%;
-        }
+      }
     }
+    md-select {
+      width: 100%;
+      select {
+        width: 100%;
+      }
+    }
+  }
+  .connect-btn {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+  }
 }

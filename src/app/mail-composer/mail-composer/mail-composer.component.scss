@@ -1,0 +1,21 @@
+:host {
+  .send-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  .send-mail-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+  /deep/ .send-mail-row {
+    display: flex;
+    justify-content: center;
+    md-input-container {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
