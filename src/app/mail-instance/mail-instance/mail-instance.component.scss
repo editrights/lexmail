@@ -1,26 +1,27 @@
 :host {
+  min-height: 100vh;
+  .mail-content {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    .mail-content {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        app-header {
-            order: 1;
-        }
-        .main-section {
-            flex-grow: 1;
-            order: 2;
-        }
-        .nav-section {
-            order: 3;
-            position: fixed;
-            bottom: 0;
-            background: white;
-        }
-        .new-mail {
-            position: fixed;
-            bottom: 3.5rem;
-            right: 1.5rem;
-        }
+    app-header {
+      order: 1;
     }
+    .main-section {
+      flex-grow: 1;
+      order: 2;
+    }
+    .nav-section {
+      order: 3;
+      position: fixed;
+      bottom: 0;
+      background: white;
+      width: 100%;
+    }
+    .new-mail {
+      position: fixed;
+      bottom: 3.5rem;
+      right: 1.5rem;
+    }
+  }
 }

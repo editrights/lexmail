@@ -1,11 +1,21 @@
-<md-list *ngIf="items.length > 0" [@listAnimation]="receivedItems" (@listAnimation.done)="onListAnimationDone()">
-    <md-list-item *ngFor="let item of items">
-        <div class="animated-list-item">
-            <h4 md-line>{{item.sender}}</h4>
-            <p md-line> {{item.content}} </p>
-        </div>
-    </md-list-item>
-</md-list>
+<ul
+        *ngIf="items.length > 0"
+        [@listAnimation]="receivedItems"
+        (@listAnimation.done)="onListAnimationDone()"
+        class="mail-items-list"
+>
+    <li *ngFor="let item of items; let i = index">
+
+        <app-content-header
+                class="animated-list-item"
+                [sender]="item.sender"
+                [contentPreview]="item.content"
+                [@expandOnClick]="getItemAnimationState(i)"
+                (click)="onContentHeaderClick(i)"
+        >
+        </app-content-header>
+    </li>
+</ul>
 
 <p *ngIf="items.length < 1">
     No items to display

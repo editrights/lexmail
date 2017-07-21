@@ -1,19 +1,21 @@
 import {Component, Input, OnChanges} from '@angular/core';
 import {MailContentItem} from '../state/initialState';
 import {listAnimation} from '../../animations/animations';
+import { expandOnClick } from '../animations';
 
 @Component({
     selector: 'app-mail-items-list',
     templateUrl: './mail-items-list.component.html',
     styleUrls: ['./mail-items-list.component.scss'],
     animations: [
-        listAnimation()
+        listAnimation(), expandOnClick()
     ]
 })
 
 export class MailItemsListComponent implements OnChanges {
     @Input() items: Array<MailContentItem> = [];
     private receivedItems: string;
+    private clickedContentHeader: number;
 
     constructor() {
     }
@@ -25,7 +27,17 @@ export class MailItemsListComponent implements OnChanges {
         }
     }
 
-    onListAnimationDone() {
+    onListAnimationDone(): void {
         this.receivedItems = '';
+    }
+    onContentHeaderClick(index: number): void {
+        this.clickedContentHeader = index;
+        console.log(index);
+    }
+    getItemAnimationState(index: number) {
+        if (index === this.clickedContentHeader) {
+            return 'expand';
+        }
+        return 'normal';
     }
 }
