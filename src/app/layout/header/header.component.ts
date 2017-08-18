@@ -11,6 +11,8 @@ export class HeaderComponent implements OnInit {
   @Input() backURL: string;
   @Input() backQuery: any = {};
   @Input() showControls: Boolean;
+  @Input() searchURL: string;
+  @Input() settingsURL: string;
   constructor() { }
 
   ngOnInit() {

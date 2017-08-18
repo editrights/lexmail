@@ -6,12 +6,15 @@
 		    
 			<h1 class="header-title">{{title}}</h1>
 			<div class="header-controls" *ngIf="showControls">
-				<button class="mdl-button mdl-js-button mdl-button--icon">
-					<i class="material-icons">search</i>
-				</button>
-				<button class="mdl-button mdl-js-button mdl-button--icon">
-					<i class="material-icons">settings</i>
-				</button>
+
+                <a *ngIf="searchURL" md-button [routerLink]="searchURL" ngClass="toolbar-button">
+                    <md-icon>search</md-icon>
+                </a>
+
+                <a md-button *ngIf="settingsURL" [routerLink]="settingsURL" ngClass="toolbar-button">
+                    <md-icon>settings</md-icon>
+                </a>
+
 			</div>
 	</md-toolbar>
 </header>

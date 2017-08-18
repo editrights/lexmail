@@ -16,6 +16,7 @@ import {MailInstanceModule} from '../mail-item/mail-item.module';
 import {MailComposerModule} from '../mail-composer/mail-composer.module';
 import {MailExistsGuardService} from './mail-exists-guard.service';
 import {SearchModule} from '../search/search.module';
+import { SettingsModule} from '../settings/settings.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -31,6 +32,7 @@ import {SearchModule} from '../search/search.module';
         MailComposerModule,
         MailInstanceModule,
         SearchModule,
+        SettingsModule,
         MainRouterModule,
     ],
     providers: [MailExistsGuardService]
