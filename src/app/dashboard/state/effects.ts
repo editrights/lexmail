@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import * as actionTypes from './actionTypes';
 import { MailRegistryService } from '../../api/mail-registry.service';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/observable/of';
 
 @Injectable()
 export class DashboardEffects {

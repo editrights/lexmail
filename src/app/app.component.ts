@@ -7,12 +7,4 @@ import { Router, NavigationStart } from '@angular/router';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    private routerSubscription: any;
-    constructor(private router: Router) {
-        this.routerSubscription = router.events
-            .filter(event => event instanceof NavigationStart)
-            .subscribe((event: NavigationStart): void => {
-               
-            });
-    }
 }

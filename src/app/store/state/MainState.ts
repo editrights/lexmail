@@ -1,5 +1,5 @@
 import {DashboardState, DashboardInitialState} from '../../dashboard/state/initialState';
-import {MailContent, MailItemsState} from '../../mail-instance/state/initialState';
+import {MailContent, MailItemsState} from '../../mail-item/state/initialState';
 import { RouterState } from '@ngrx/router-store';
 
 export interface State {

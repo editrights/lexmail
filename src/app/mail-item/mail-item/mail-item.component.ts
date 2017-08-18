@@ -11,15 +11,14 @@ import {go, replace} from '@ngrx/router-store';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-    selector: 'app-mail-instance',
-    templateUrl: './mail-instance.component.html',
-    styleUrls: ['./mail-instance.component.scss'],
+    selector: 'app-mail-item',
+    templateUrl: './mail-item.component.html',
+    styleUrls: ['./mail-item.component.scss'],
     animations: [
         fabToggle, listAnimation(), expandingFAB()
     ]
 })
-
-export class MailInstanceComponent implements OnInit, OnDestroy {
+export class MailItemComponent implements OnInit, OnDestroy {
     headerTitle: string;
     activeLink: string;
     content: MailContent = <MailContent>{};
@@ -43,7 +42,7 @@ export class MailInstanceComponent implements OnInit, OnDestroy {
             .subscribe(params => {
                 this.headerTitle = params['name'];
                 this.activeLink = params['box'];
-                this.items = MailInstanceComponent.filterVisibleItems(this.content, params['box']);
+                this.items = MailItemComponent.filterVisibleItems(this.content, params['box']);
                 this
                     .store
                     .dispatch(getMailContent({
@@ -90,7 +89,7 @@ export class MailInstanceComponent implements OnInit, OnDestroy {
             .select('opened_mail')
             .subscribe((data: MailContent) => {
                 this.content = <MailContent>data;
-                this.items = MailInstanceComponent.filterVisibleItems(this.content, this.activeLink);
+                this.items = MailItemComponent.filterVisibleItems(this.content, this.activeLink);
             });
     }
 

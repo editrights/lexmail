@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MailInstanceComponent} from './mail-instance/mail-instance.component';
+import {MailItemComponent} from './mail-item/mail-item.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LayoutModule} from '../layout/layout.module';
 import {MaterialComponentsModule} from '../material-components/material-components.module';
@@ -22,7 +22,7 @@ import { ContentHeaderComponent } from './content-header/content-header.componen
         EffectsModule.run(MailInstanceEffects)
     ],
     exports: [RouterModule],
-    declarations: [MailInstanceComponent, MailItemsListComponent, MailContentComponent, ContentHeaderComponent]
+    declarations: [MailItemComponent, MailItemsListComponent, MailContentComponent, ContentHeaderComponent]
 })
 export class MailInstanceModule {
 }

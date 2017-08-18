@@ -5,7 +5,7 @@ import {DashboardComponent} from './dashboard/dashboard/dashboard.component';
 import {AuthenticationModule} from './authentication/authentication.module';
 import {LayoutModule} from './layout/layout.module';
 
-import {MailInstanceModule} from './mail-instance/mail-instance.module';
+import {MailInstanceModule} from './mail-item/mail-item.module';
 import {LoginPageComponent} from './authentication/login-page/login-page.component';
 import {PageNotFoundComponent} from './layout/page-not-found/page-not-found.component';
 

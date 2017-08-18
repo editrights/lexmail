@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MailInstanceComponent } from './mail-instance.component';
+import { MailInstanceComponent } from './mail-item.component';
 
 describe('MailInstanceComponent', () => {
   let component: MailInstanceComponent;

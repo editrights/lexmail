@@ -1,4 +1,4 @@
 <div class="mdl-layout mdl-layout--fixed-header dashboard">
   <app-header [title]="headerTitle" [showControls]="showHeaderControls"></app-header>
-  <app-registered-mails [mails]="registeredMails" class="app-main-content"></app-registered-mails>
+  <app-registered-mails [mails]="registeredMails | async" class="app-main-content"></app-registered-mails>
 </div>
