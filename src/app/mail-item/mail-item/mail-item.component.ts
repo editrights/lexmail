@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, HostBinding} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {listAnimation, expandingFAB} from '../../animations/animations';
 import {fabToggle} from '../../animations/fab_toggle';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -6,8 +6,7 @@ import {Store} from '@ngrx/store';
 import {State} from '../../store/state/MainState';
 import {MailContent, MailContentItem} from '../state/initialState';
 import {getMailContent} from '../state/actions';
-import {NavigationExtras} from '@angular/router';
-import {go, replace} from '@ngrx/router-store';
+import {go} from '@ngrx/router-store';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
@@ -35,7 +34,6 @@ export class MailItemComponent implements OnInit, OnDestroy {
     }
 
     constructor(private store: Store<State>, private route: ActivatedRoute, private router: Router) {
-
         this
             .route
             .params
@@ -63,24 +61,6 @@ export class MailItemComponent implements OnInit, OnDestroy {
         } else {
             this.fabExpansions += 1;
         }
-    }
-
-    composeInnerLink(box: string): string {
-        const base = this.router.url.slice(0, this.router.url.lastIndexOf('/'));
-        const result = `${base}/${box}`;
-
-        return result;
-    }
-
-    navigateTo(box: string): void {
-        const url = this.composeInnerLink(box);
-        this.store.dispatch(replace([url]));
-    }
-
-    routerLinkActive(link): Boolean {
-        return link.toLowerCase() === (this.activeLink
-                ? this.activeLink.toLowerCase()
-                : '');
     }
 
     ngOnInit() {

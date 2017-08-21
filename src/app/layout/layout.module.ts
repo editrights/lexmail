@@ -7,6 +7,7 @@ import {MaterialComponentsModule} from '../material-components/material-componen
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {RouterModule} from '@angular/router';
 import {ResizableDirective} from './resizable.directive';
+import { TabNavComponent } from './tab-nav/tab-nav.component';
 
 @NgModule({
     imports: [
@@ -14,9 +15,10 @@ import {ResizableDirective} from './resizable.directive';
         MaterialComponentsModule,
         RouterModule
     ],
-    declarations: [FooterComponent, HeaderComponent, MainComponent, PageNotFoundComponent, ResizableDirective],
+    declarations: [FooterComponent, HeaderComponent, MainComponent, PageNotFoundComponent, ResizableDirective, TabNavComponent],
     exports: [
         HeaderComponent,
+        TabNavComponent,
         FooterComponent,
         MainComponent,
         ResizableDirective

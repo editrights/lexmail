@@ -2,30 +2,19 @@
     <app-header [title]="headerTitle" [backEnabled]="backEnabled" [showControls]="showHeaderControls"
                 [backURL]="backURL"></app-header>
 
-    <section class="main-section app-main-content">
+    <section class="main-section app-main-content" role="main">
         <app-mail-items-list [items]="items"></app-mail-items-list>
         <div>
-            <a class="new-mail" md-fab [@fabToggle] (click)="expandFAB()">
+            <a class="new-mail" md-fab [@fabToggle] (click)="expandFAB()" role="button" aria-label="Navigate to mail composer">
                 <i class="material-icons">edit</i>
             </a>
         </div>
     </section>
 
-    <nav md-tab-nav-bar class="nav-section">
-        <a md-tab-link (click)="navigateTo('inbox')" [active]="routerLinkActive('inbox')">
-            Inbox
-        </a>
-        <a md-tab-link (click)="navigateTo('outbox')" [active]="routerLinkActive('outbox')">
-            Outbox
-        </a>
-        <a md-tab-link (click)="navigateTo('sent')" [active]="routerLinkActive('sent')">
-            Sent
-        </a>
-        <a md-tab-link (click)="navigateTo('draft')" [active]="routerLinkActive('draft')">
-            Draft
-        </a>
-    </nav>
+    <section class="nav-section" role="tabpanel">
+        <app-tab-nav [activeLink]="activeLink"></app-tab-nav>
+    </section>
 
-    <div [@expand]="fabState" (@expand.done)="navigateToComposer()"></div>
+    <div [@expand]="fabState" (@expand.done)="navigateToComposer()" aria-hidden="true"></div>
 
 </article>
