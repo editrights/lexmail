@@ -8,6 +8,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {RouterModule} from '@angular/router';
 import {ResizableDirective} from './resizable.directive';
 import { TabNavComponent } from './tab-nav/tab-nav.component';
+import { SidePanelComponent } from './side-panel/side-panel.component';
 
 @NgModule({
     imports: [
@@ -15,13 +16,14 @@ import { TabNavComponent } from './tab-nav/tab-nav.component';
         MaterialComponentsModule,
         RouterModule
     ],
-    declarations: [FooterComponent, HeaderComponent, MainComponent, PageNotFoundComponent, ResizableDirective, TabNavComponent],
+    declarations: [FooterComponent, HeaderComponent, MainComponent, PageNotFoundComponent, ResizableDirective, TabNavComponent, SidePanelComponent],
     exports: [
         HeaderComponent,
         TabNavComponent,
         FooterComponent,
         MainComponent,
-        ResizableDirective
+        ResizableDirective,
+        SidePanelComponent
     ]
 })
 export class LayoutModule {

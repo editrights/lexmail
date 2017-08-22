@@ -1,5 +1,13 @@
 <div class="mdl-layout mdl-layout--fixed-header dashboard">
-    <app-header [title]="headerTitle" [showControls]="showHeaderControls" searchURL="/search/all"
-                settingsURL="/settings/global"></app-header>
-    <app-registered-mails [mails]="registeredMails | async" class="app-main-content"></app-registered-mails>
+    <md-sidenav-container (backdropClick)="handleMenuClose()">
+        <md-sidenav align="start" mode="push" [opened]="sidebarOpened">
+            <div>pesho</div>
+            <div>gosho</div>
+        </md-sidenav>
+        <section class="main-panel">
+            <app-header [title]="headerTitle" [showControls]="showHeaderControls" searchURL="/search/all"
+                        settingsURL="/settings/global" [sidebarActive]="true" (menuOpened)="handleMenuOpen()"></app-header>
+            <app-registered-mails [mails]="registeredMails | async" class="app-main-content"></app-registered-mails>
+        </section>
+    </md-sidenav-container>
 </div>

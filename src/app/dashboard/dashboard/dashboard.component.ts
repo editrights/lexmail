@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
     headerTitle: String = 'Dashboard';
     registeredMails: Observable<MailMetadata[]>;
     showHeaderControls: Boolean = true;
+    sidebarOpened = false;
 
     constructor(private store: Store<State>) {}
 
@@ -25,5 +26,11 @@ export class DashboardComponent implements OnInit {
             .store
             .dispatch(getRegisteredMails());
         this.registeredMails = selectRegisteredMails(this.store);
+    }
+    handleMenuOpen(): void {
+        this.sidebarOpened = true;
+    }
+    handleMenuClose(): void {
+        this.sidebarOpened = false;
     }
 }

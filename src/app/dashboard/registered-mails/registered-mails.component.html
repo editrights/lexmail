@@ -1,12 +1,12 @@
 <main class="registered-mails">
-    <header>
+
+    <div class="fab-container">
         <div class="add-mail" (click)="expandFAB()" [@fabToggle]="fabState">
             <a md-fab>
-  			    <i class="material-icons">add</i>
-		    </a>
+                <i class="material-icons">add</i>
+            </a>
         </div>
-
-    </header>
+    </div>
 
     <md-list class="mails-list">
         <md-list-item *ngFor="let mail of mails" class="md-list-item">

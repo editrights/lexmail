@@ -1,7 +1,10 @@
 :host {
     height: 100%;
 }
-.dashboard {
+.main-panel {
     display: flex;
     flex-direction: column;
+}
+/deep/ md-sidenav-container {
+    height: 100%;
 }

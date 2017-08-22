@@ -1,6 +1,9 @@
 <header>
 	<md-toolbar color="primary" class="header-row-1 header-wrapper" role="toolbar">
 
+		    <a md-button *ngIf="sidebarActive" role="button" aria-label="Open sidebar" (click)="menuOpened.emit()">
+                <md-icon>menu</md-icon>
+            </a>
 			<a md-button [routerLink]="backURL" [queryParams]="backQuery"
 			   *ngIf="backEnabled" class="back-button" aria-label="Back button" role="button">
 				<md-icon >arrow_back</md-icon>
