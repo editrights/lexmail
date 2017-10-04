@@ -1,12 +1,12 @@
 import {Routes} from '@angular/router';
-import {MailItemComponent} from './mail-item/mail-item.component';
+import {MailboxComponent} from './mailbox/mailbox';
 import {MailContentComponent} from './mail-content/mail-content.component';
 import {MailExistsGuardService} from '../core/mail-exists-guard.service';
 
 export const routes: Routes = [
     {
         path: 'mails/:name/:box',
-        component: MailItemComponent,
+        component: MailboxComponent,
         pathMatch: 'full',
         canActivate: [
             MailExistsGuardService

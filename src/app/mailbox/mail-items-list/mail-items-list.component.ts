@@ -13,11 +13,15 @@ import {listAnimation} from '../../animations/animations';
 
 export class MailItemsListComponent implements OnChanges {
     @Input() items: Array<MailContentItem> = [];
+    @Input() mailbox: String;
+    @Input() category: String;
     private receivedItems: string;
 
     constructor() {
     }
-
+    getRouterLink(mailId) {
+        return `/mails/${this.mailbox}/${this.category}/${mailId}`;
+    }
     ngOnChanges(data) {
         const hasChanges = data.items.currentValue !== data.items.previousValue;
         if (hasChanges) {

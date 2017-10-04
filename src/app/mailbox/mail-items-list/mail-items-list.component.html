@@ -10,6 +10,7 @@
                 class="animated-list-item"
                 [sender]="item.sender"
                 [contentPreview]="item.content"
+                [routerLink]="getRouterLink(item.sender)"
         >
         </app-content-header>
     </li>

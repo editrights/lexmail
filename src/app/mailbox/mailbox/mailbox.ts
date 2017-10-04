@@ -10,14 +10,14 @@ import {go} from '@ngrx/router-store';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-    selector: 'app-mail-item',
-    templateUrl: './mail-item.component.html',
-    styleUrls: ['./mail-item.component.scss'],
+    selector: 'app-mailbox',
+    templateUrl: './mailbox.html',
+    styleUrls: ['./mailbox.scss'],
     animations: [
         fabToggle, listAnimation(), expandingFAB()
     ]
 })
-export class MailItemComponent implements OnInit, OnDestroy {
+export class MailboxComponent implements OnInit, OnDestroy {
     headerTitle: string;
     activeLink: string;
     content: MailContent = <MailContent>{};
@@ -40,11 +40,11 @@ export class MailItemComponent implements OnInit, OnDestroy {
             .subscribe(params => {
                 this.headerTitle = params['name'];
                 this.activeLink = params['box'];
-                this.items = MailItemComponent.filterVisibleItems(this.content, params['box']);
+                this.items = MailboxComponent.filterVisibleItems(this.content, params['box']);
                 this
                     .store
                     .dispatch(getMailContent({
-                        target: params['box'],
+                        target: this.activeLink,
                         mailBox: this.headerTitle
                     }));
             });
@@ -69,7 +69,7 @@ export class MailItemComponent implements OnInit, OnDestroy {
             .select('opened_mail')
             .subscribe((data: MailContent) => {
                 this.content = <MailContent>data;
-                this.items = MailItemComponent.filterVisibleItems(this.content, this.activeLink);
+                this.items = MailboxComponent.filterVisibleItems(this.content, this.activeLink);
             });
     }
 

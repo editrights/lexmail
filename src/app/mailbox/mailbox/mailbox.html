@@ -3,7 +3,7 @@
                 [backURL]="backURL"></app-header>
 
     <section class="main-section app-main-content" role="main">
-        <app-mail-items-list [items]="items"></app-mail-items-list>
+        <app-mail-items-list [items]="items" [mailbox]="headerTitle" [category]="activeLink"></app-mail-items-list>
         <div>
             <a class="new-mail" md-fab [@fabToggle] (click)="expandFAB()" role="button" aria-label="Navigate to mail composer">
                 <i class="material-icons">edit</i>

@@ -10,9 +10,9 @@ import {StoreModule} from '@ngrx/store';
 import {MainRouterModule} from '../core-router.module';
 import MainReducer from '../store/reducers/MainReducer';
 import dashboard from '../dashboard/state/reducer';
-import opened_mail from '../mail-item/state/reducers';
+import opened_mail from '../mailbox/state/reducers';
 import {AddMailModule} from '../add-mail/add-mail.module';
-import {MailInstanceModule} from '../mail-item/mail-item.module';
+import {MailboxModule} from '../mailbox/mailbox.module';
 import {MailComposerModule} from '../mail-composer/mail-composer.module';
 import {MailExistsGuardService} from './mail-exists-guard.service';
 import {SearchModule} from '../search/search.module';
@@ -30,7 +30,7 @@ import { SettingsModule} from '../settings/settings.module';
         RouterStoreModule.connectRouter(),
         AddMailModule,
         MailComposerModule,
-        MailInstanceModule,
+        MailboxModule,
         SearchModule,
         SettingsModule,
         MainRouterModule,
