@@ -1,3 +1,8 @@
+# Demo of current project
+Experimental project for learning Angular
+"Optimized" for mobile view
+[Demo link](https://zdravkokirilov.github.io/zebramail/mails)
+
 # ZebramailPwa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
